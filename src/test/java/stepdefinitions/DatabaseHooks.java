@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.FileCopyUtils;
 import java.nio.charset.StandardCharsets;
 
-@Transactional
 public class DatabaseHooks {
 
     @Autowired
