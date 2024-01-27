@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.FileCopyUtils;
-
 import java.nio.charset.StandardCharsets;
 
 @Transactional
@@ -17,7 +16,7 @@ public class DatabaseHooks {
 
     @Before
     public void setupTestData() {
-        // Load SQL from the resource folder
+        // Load SQL from the test-data.sql file in the resources folder
         try {
             ClassPathResource resource = new ClassPathResource("test-data.sql");
             byte[] bdata = FileCopyUtils.copyToByteArray(resource.getInputStream());
