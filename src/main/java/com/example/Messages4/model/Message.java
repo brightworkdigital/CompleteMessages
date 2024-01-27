@@ -1,9 +1,6 @@
 package com.example.Messages4.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Message {
@@ -15,6 +12,7 @@ public class Message {
     String content;
 
     @ManyToOne
+    @JoinColumn(name = "person_id")
     Person sender;
 
     public Message()  {}

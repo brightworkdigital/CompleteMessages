@@ -58,7 +58,8 @@ public class MessagesEndToEndTest {
         assertAll("Testing from a test-data.sql file",
                 () -> assertEquals(2, messages.length),
                 () -> assertEquals("First test message", messages[0].getContent()),
-                () -> assertEquals("Second test message", messages[1].getContent())
+                () -> assertEquals("Second test message", messages[1].getContent()),
+                () -> assertEquals("Will", messages[0].getSender().getName())
                 );
     }
 

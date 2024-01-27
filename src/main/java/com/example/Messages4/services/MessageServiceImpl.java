@@ -15,6 +15,11 @@ public class MessageServiceImpl implements IMessageService{
         return messageRepository.findAll();
     }
 
+    @Override
+    public Iterable<Message> findByEmail(String email) {
+        return messageRepository.findBySenderEmail(email);
+    }
+
     @Autowired
     public void setMessageRepository(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;

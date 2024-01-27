@@ -7,4 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IMessageService {
     Iterable<Message> getAllMessages();
+
+    Iterable<Message> findByEmail(String email);
 }
