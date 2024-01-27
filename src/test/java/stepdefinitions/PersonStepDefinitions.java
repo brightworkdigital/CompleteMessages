@@ -63,11 +63,16 @@ public class PersonStepDefinitions {
         for(Person p : persons) {
             if(p.getName().equals(testPerson.getName()) && p.getEmail().equals(testPerson.getEmail())) {
                 isOnList = true;
+                break;
             }
         }
         assertTrue(isOnList);
     }
 }
 
-//TODO:  Refactor this code.  The list of Persons is returned from the add person http request.
-// We do not need to get this list again in the Then statement
+//TODO:  Refactor this code.  The list of Persons is contained in the HTTP Response
+// from the add person HTTP Request sent in the When statement.
+// We do not need to get this list again in the Then statement.
+//If you do this refactoring, check to see how much faster the scenario ran!
+
+
