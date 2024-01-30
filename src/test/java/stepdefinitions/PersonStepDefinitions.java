@@ -19,6 +19,7 @@ import java.io.UnsupportedEncodingException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 public class PersonStepDefinitions {
 
     Person[] persons;
@@ -26,8 +27,8 @@ public class PersonStepDefinitions {
 
     @Autowired
     MockMvc mockMvc;
-
-    ObjectMapper mapper = new ObjectMapper();
+    @Autowired
+    ObjectMapper mapper;
 
     @Given("I want to add a person with name {string} and email {string}")
     public void iWantToAddAPersonWithNameAndEmail(String name, String email) {
@@ -52,7 +53,7 @@ public class PersonStepDefinitions {
         ResultActions resultActions =this.mockMvc.perform(
                         MockMvcRequestBuilders.get("/persons")
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .accept("application/json"))
+                                .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
 
         MvcResult result = resultActions.andReturn();
@@ -69,10 +70,3 @@ public class PersonStepDefinitions {
         assertTrue(isOnList);
     }
 }
-
-//TODO:  Refactor this code.  The list of Persons is contained in the HTTP Response
-// from the add person HTTP Request sent in the When statement.
-// We do not need to get this list again in the Then statement.
-//If you do this refactoring, check to see how much faster the scenario ran!
-
-
