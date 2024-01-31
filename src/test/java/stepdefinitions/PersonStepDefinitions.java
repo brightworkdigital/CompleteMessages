@@ -1,8 +1,6 @@
 package stepdefinitions;
 
-import com.example.Messages4.model.Message;
 import com.example.Messages4.model.Person;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,8 +12,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import java.io.UnsupportedEncodingException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

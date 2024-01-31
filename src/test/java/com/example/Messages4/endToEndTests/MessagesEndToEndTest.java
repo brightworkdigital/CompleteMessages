@@ -3,16 +3,13 @@ package com.example.Messages4.endToEndTests;
 import com.example.Messages4.model.Message;
 import com.example.Messages4.model.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
@@ -20,12 +17,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import javax.sql.DataSource;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -56,7 +47,7 @@ public class MessagesEndToEndTest {
         Message[] messages = mapper.readValue(contentAsString, Message[].class);
 
         assertAll("Testing from a test-data.sql file",
-                () -> assertEquals(2, messages.length),
+                () -> assertEquals(3, messages.length),
                 () -> assertEquals("First test message", messages[0].getContent()),
                 () -> assertEquals("Second test message", messages[1].getContent()),
                 () -> assertEquals("Will", messages[0].getSender().getName())

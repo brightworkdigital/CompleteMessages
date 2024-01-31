@@ -2,10 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.java.Before;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.util.FileCopyUtils;
+
 import java.nio.charset.StandardCharsets;
 
 public class DatabaseHooks {

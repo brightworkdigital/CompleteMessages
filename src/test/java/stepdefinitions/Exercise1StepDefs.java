@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+@SuppressWarnings("unused")
 public class Exercise1StepDefs {
 
     @Given("this is the given statement")

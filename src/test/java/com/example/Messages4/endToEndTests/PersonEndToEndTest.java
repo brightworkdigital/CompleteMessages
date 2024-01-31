@@ -1,6 +1,5 @@
 package com.example.Messages4.endToEndTests;
 
-import com.example.Messages4.model.Message;
 import com.example.Messages4.model.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeAll;
