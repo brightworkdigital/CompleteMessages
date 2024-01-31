@@ -25,6 +25,7 @@ public class DatabaseHooks {
             // Execute SQL script
             jdbcTemplate.execute(sql);
         } catch (Exception e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
             throw new RuntimeException("Failed to load test data", e);
         }

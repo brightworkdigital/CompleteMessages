@@ -18,6 +18,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SuppressWarnings("TestFailedLine")
 public class deployedGetMessagesTests {
     ObjectMapper mapper = new ObjectMapper();
 
@@ -71,8 +72,7 @@ public class deployedGetMessagesTests {
         getRequest = new HttpGet("http://localhost:8080/persons");
         response = (HttpResponse) HttpClientBuilder.create().build().execute(getRequest);
         Person[] persons = mapper.readValue(response.getEntity().getContent(), Person[].class);
-        int originalLength = persons.length;
-        return originalLength;
+        return persons.length;
     }
 
     private boolean checkIfOnList(String name, String email, Person[] persons) {
