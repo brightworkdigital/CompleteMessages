@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 public class DatabaseHooks {
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
