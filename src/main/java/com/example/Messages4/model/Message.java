@@ -11,6 +11,7 @@ public class Message {
 
     String content;
 
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @ManyToOne
     @JoinColumn(name = "person_id")
     Person sender;
