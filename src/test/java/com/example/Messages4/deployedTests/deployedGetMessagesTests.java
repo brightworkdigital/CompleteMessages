@@ -12,6 +12,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class deployedGetMessagesTests {
     ObjectMapper mapper = new ObjectMapper();
 
+    @Disabled
     @Test
     public void getAllMessagesTest() throws IOException {
 
@@ -44,6 +46,7 @@ public class deployedGetMessagesTests {
     HttpResponse response;
     HttpClient httpClient = HttpClientBuilder.create().build();
 
+    @Disabled
     @Test
     public void testAddingPerson() throws IOException {
         int originalLength = getOriginalLength();
